@@ -1,4 +1,4 @@
-package org.example;
+package org;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +16,7 @@ public class Client {
 
         InputStream stream = System.in;
         Scanner scanner = new Scanner(stream);
-        System.out.println("IP/ServerName:");
+        System.out.println("IP/Server Name:");
         String host = scanner.next();
 
         System.out.println("Puerto:");

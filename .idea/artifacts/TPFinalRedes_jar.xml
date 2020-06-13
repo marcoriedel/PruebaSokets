@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TPFinalRedes:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TPFinalRedes_jar</output-path>
+    <root id="archive" name="TPFinalRedes.jar">
+      <element id="module-output" name="TPFinalRedes" />
+    </root>
+  </artifact>
+</component>

@@ -14,23 +14,29 @@ public class Client {
 
     public void runClient() throws IOException {
 
-        InputStream stream = System.in;
-        Scanner scanner = new Scanner(stream);
-        System.out.println("IP/Server Name:");
-        String host = scanner.next();
+        try {
+            InputStream stream = System.in;
+            Scanner scanner = new Scanner(stream);
+            System.out.println("IP/Server Name:");
+            String host = scanner.next();
 
-        System.out.println("Puerto:");
-        String port = scanner.next();
-        System.out.println("Server:" + host + " Port: " + port);
+            System.out.println("Puerto:");
+            String port = scanner.next();
+            System.out.println("Server:" + host + " Port: " + port);
 
-        Socket socket = new Socket(host, Integer.parseInt(port));
-        OutputStream out = socket.getOutputStream();
+            Socket socket = new Socket(host, Integer.parseInt(port));
+            OutputStream out = socket.getOutputStream();
 
+            System.out.println("Mensaje:");
+            String msj = scanner.next();
 
-        System.out.println("Mensaje:");
-        String msj = scanner.next();
+            out.write(msj.getBytes());
 
-        out.write(msj.getBytes());
-        socket.close();
+            socket.close();
+
+        }catch (Exception ex){
+            System.out.println("Error de conexion valide host o puerto ingresado.");;
+        }
+
     }
 }

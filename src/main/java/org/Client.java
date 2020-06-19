@@ -22,11 +22,14 @@ public class Client {
 
             System.out.println("Puerto:");
             String port = scanner.next();
-            System.out.println("Server:" + host + " Port: " + port);
+            System.out.println("Conectando al Server:" + host + " Port: " + port);
 
             Socket socket = new Socket(host, Integer.parseInt(port));
             OutputStream out = socket.getOutputStream();
-
+            InputStream in = socket.getInputStream();
+            int rta =in.read();
+            if(rta > 0)
+            System.out.println("Conexion Realizada a " + socket.getInetAddress().getHostName());
             System.out.println("Mensaje:");
             String msj = scanner.next();
 

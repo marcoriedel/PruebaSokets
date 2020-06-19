@@ -1,21 +1,23 @@
 package org;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.Socket;
 
 public class Connection extends Thread {
 
     Socket socket;
 
-    public Connection(Socket socket){
+    public Connection(Socket socket) throws IOException {
         this.socket = socket;
     }
 
     public void run(){
         try {
             InputStream inputStream = socket.getInputStream();
+            OutputStream outputStream = socket.getOutputStream();
+            outputStream.write(1);
+
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             String content = "";
 
